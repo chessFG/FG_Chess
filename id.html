@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ID Details</title>
+  <style>
+    body {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("images/usr.jpg");
+      background-size: cover;
+    }
+    .container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    .container h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .container p {
+      margin-bottom: 10px;
+    }
+    .container button {
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ID Details</h1>
+    <p>Username: <span id="username"></span></p>
+    <p>Level: <span id="level"></span></p>
+    <p>Matches Played: <span id="matchesPlayed"></span></p>
+    <button id="addFriend">Add Friend</button>
+  </div>
+  
+  <script>
+    var queryParams = new URLSearchParams(window.location.search);
+    var username = queryParams.get('username');
+    var chessIDs = {
+      EnigmaticPawn: {
+        username: "EnigmaticPawn",
+        level: 12,
+        matchesPlayed: 9
+      },
+      CheckmateMaster: {
+        username: "CheckmateMaster",
+        level: 18,
+        matchesPlayed: 24
+      },
+      "Queen'sGambitPlayer": {
+        username: "Queen'sGambitPlayer",
+        level: 15,
+        matchesPlayed: 20
+      },
+      SabinGurung: {
+        username: "SabinGurung",
+        level: 14,
+        matchesPlayed: 17
+      },
+      AnjaliShrestha: {
+        username: "AnjaliShrestha",
+        level: 10,
+        matchesPlayed: 12
+      },
+      PoojaRai: {
+        username: "PoojaRai",
+        level: 8,
+        matchesPlayed: 5
+      },
+      RameshGautam: {
+        username: "RameshGautam",
+        level: 11,
+        matchesPlayed: 14
+      },
+      SaritaSharma: {
+        username: "SaritaSharma",
+        level: 9,
+        matchesPlayed: 7
+      },
+      BikramTamang: {
+        username: "BikramTamang",
+        level: 13,
+        matchesPlayed: 16
+      },
+      KritikaBhandari: {
+        username: "KritikaBhandari",
+        level: 7,
+        matchesPlayed: 10
+      },
+      NirajAcharya: {
+        username: "NirajAcharya",
+        level: 16,
+        matchesPlayed: 21
+      },
+      SunitaBasnet: {
+        username: "SunitaBasnet",
+        level: 10,
+        matchesPlayed: 13
+      },
+      DipeshLama: {
+        username: "DipeshLama",
+        level: 11,
+        matchesPlayed: 15
+      },
+      SangitaGiri: {
+        username: "SangitaGiri",
+        level: 13,
+        matchesPlayed: 18
+      },
+      PrakashRajbhandari: {
+        username: "PrakashRajbhandari",
+        level: 13,
+        matchesPlayed: 16
+      },
+      AnjuAdhikari: {
+        username: "AnjuAdhikari",
+        level: 10,
+        matchesPlayed: 13
+      },
+      ManojMagar: {
+        username: "ManojMagar",
+        level: 11,
+        matchesPlayed: 15
+      },
+      aadityabosschess: {
+        username: "aadityabosschess",
+        level: 15,
+        matchesPlayed: 17
+      },
+      praphullabog: {
+        username: "praphullabog",
+        level: 14,
+        matchesPlayed: 18
+      },
+      priyanshubogati0: {
+        username: "priyanshubogati0",
+        level: 12,
+        matchesPlayed: 14
+      }
+    };
+
+    var chessIDDetails = chessIDs[username];
+
+    if (chessIDDetails) {
+      var usernameElement = document.getElementById("username");
+      var levelElement = document.getElementById("level");
+      var matchesPlayedElement = document.getElementById("matchesPlayed");
+
+      usernameElement.textContent = chessIDDetails.username;
+      levelElement.textContent = chessIDDetails.level;
+      matchesPlayedElement.textContent = chessIDDetails.matchesPlayed;
+    }
+
+    var addFriendButton = document.getElementById("addFriend");
+    addFriendButton.addEventListener("click", function() {
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
+
+

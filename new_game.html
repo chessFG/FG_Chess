@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Game</title>
+  <style>
+    body {
+        background-image: url("images/OIG.jpg");
+			background-size: cover;
+			background-position: center;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .box {
+      width: 300px;
+      height: 100px;
+      border: 1px solid black;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background-color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .box:hover {
+      background-color: lightgray;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" onclick="location.href='login.html'">
+          <h2>Play with friends</h2>
+        </div>
+        <div class="box" onclick="location.href='login.html'">
+          <h2>Play offline</h2>
+        </div>
+        <div class="box" onclick="location.href='login.html'">
+          <h2>Play with computer</h2>
+        </div>
+      </div>
+    
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Username Search</title>
+  <style>
+    body {
+      background-image: url("images/hdchess.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .search-form {
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      padding: 10px;
+    }
+
+    .search-button {
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+      background-color: #0D47A1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="color: gold; background-color: black;">Add Friends with Username</h2>
+    <form class="search-form">
+      <input class="search-input" type="text" placeholder="Type friend's username here" id="username-input">
+      <button class="search-button" type="submit">Search</button>
+    </form>
+  </div>
+
+  <script>
+    var chessIDs = {
+      EnigmaticPawn: {
+        username: "EnigmaticPawn",
+        level: 12,
+        matchesPlayed: 9
+      },
+      CheckmateMaster: {
+        username: "CheckmateMaster",
+        level: 18,
+        matchesPlayed: 24
+      },
+      "Queen'sGambitPlayer": {
+        username: "Queen'sGambitPlayer",
+        level: 15,
+        matchesPlayed: 20
+      },
+      SabinGurung: {
+        username: "SabinGurung",
+        level: 14,
+        matchesPlayed: 17
+      },
+      AnjaliShrestha: {
+        username: "AnjaliShrestha",
+        level: 10,
+        matchesPlayed: 12
+      },
+      PoojaRai: {
+        username: "PoojaRai",
+        level: 8,
+        matchesPlayed: 5
+      },
+      RameshGautam: {
+        username: "RameshGautam",
+        level: 11,
+        matchesPlayed: 14
+      },
+      SaritaSharma: {
+        username: "SaritaSharma",
+        level: 9,
+        matchesPlayed: 7
+      },
+      BikramTamang: {
+        username: "BikramTamang",
+        level: 13,
+        matchesPlayed: 16
+      },
+      KritikaBhandari: {
+        username: "KritikaBhandari",
+        level: 7,
+        matchesPlayed: 10
+      },
+      NirajAcharya: {
+        username: "NirajAcharya",
+        level: 16,
+        matchesPlayed: 21
+      },
+      SunitaBasnet: {
+        username: "SunitaBasnet",
+        level: 10,
+        matchesPlayed: 13
+      },
+      DipeshLama: {
+        username: "DipeshLama",
+        level: 11,
+        matchesPlayed: 15
+      },
+      SangitaGiri: {
+        username: "SangitaGiri",
+        level: 13,
+      matchesPlayed: 18
+    },
+    PrakashRajbhandari: {
+      username: "PrakashRajbhandari",
+      level: 14,
+      matchesPlayed: 19
+    },
+    AnjuAdhikari: {
+      username: "AnjuAdhikari",
+      level: 9,
+      matchesPlayed: 11
+    },
+    ManojMagar: {
+      username: "ManojMagar",
+      level: 11,
+      matchesPlayed: 16
+    }
+  };
+
+  var searchForm = document.querySelector(".search-form");
+  var usernameInput = document.querySelector("#username-input");
+
+  searchForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    var username = usernameInput.value.trim();
+    if (username !== "") {
+      window.location.href = "id.html?username=" + username;
+    }
+  });
+</script>
+
+</body>
+</html>
+
+       
